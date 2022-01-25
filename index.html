@@ -1,293 +1,335 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>HFLive13.0技术指南</title>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width initial-scale=1'>
+  <title>HFLive13.0技术指南</title>
 </head>
-<body><div style="text-align: center; padding-bottom: .3em; font-size: 2.25em; line-height: 1.2; margin: 1em auto 1.2em; font-weight: bold">HFLive13.0 技术指南</div>
-<div style="padding-bottom: .3em; font-size: 2.25em; line-height: 1.2; margin: auto; text-align: center">目录</div>
-<div>[TOC]</div>
-<h1 id='拍摄组'>拍摄组</h1>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h1 id='线路组'>线路组</h1>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h1 id='技术组'>技术组</h1>
-<h2 id='直播间网络设备连接'>直播间网络设备连接</h2>
-<p>我们直播所用到的设备都是通过同一个局域网进行连接，首先我们来介绍直播间的网络连接：</p>
-<ol start='' >
-<li><p>路由器的接法是WAN进LAN出，即墙里出来的网线连路由器的WAN口，而其他所有需要用到路由器网络的设备则是连接到路由器的LAN口。</p>
-</li>
-<li><p>交换机的接口要连接到路由器的LAN口，可以把交换器理解为路由器LAN口的扩展。</p>
-</li>
-<li><p>使用交换器任意一个接口与切换台，导播台，电子调音台连接。</p>
-</li>
-<li><p>计算机在连接直播间的网络（无线或有线）后均可以连接切换台和音控台。</p>
-<blockquote><p>当路由器由于意外情况断网时，电脑和手机有可能会自动断开 Wi-Fi 连接，因此请尽量使用有线网络连接。</p>
-</blockquote>
-<p>&nbsp;</p>
-<p><img src="image/直播间网络设备连线.svg" alt="直播间网络设备连线" style="zoom:50%;" /></p>
-</li>
 
-</ol>
-<center>HFLive13.0 直播间网络接线</center>
-<p><img src="image/直播间网络设备连线 - 建议.svg" alt="直播间网络设备连线 - 建议" style="zoom:50%;" /></p>
-<center>直播间网络接线（建议）</center>
-<p>&nbsp;</p>
-<h2 id='采集卡声音采集'>采集卡声音采集</h2>
-<p>采集卡声音采集历来是一个问题，下面将介绍采集卡采声的几个方法</p>
-<ul>
-<li>直连：使用圆刚或者绿联的采集卡直接进行采集，在OBS音频输出模式中选择输出到桌面音频（绿联不需要），然后添加音频输出采集，即可采集到HDMI接收到的舞台干声，不推荐。</li>
-<li>采集卡加音频线：众所周知，在矩阵的输出口上，有音频线接口，用音频线连接矩阵以及用来上传的计算机，使用线路采集即可采集到声音，较稳定。</li>
-<li>采集卡加采集卡：圆刚采集直播画面，绿联采集直播声音，方法如单个采集卡.</li>
+<body>
+  <h1>HFLive13.0 技术指南</h1>
+  <h1 id='拍摄组'>拍摄组</h1>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h1 id='线路组'>线路组</h1>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h1 id='技术组'>技术组</h1>
+  <h2 id='直播间网络设备连接'>直播间网络设备连接</h2>
+  <p>我们直播所用到的设备都是通过同一个局域网进行连接，首先我们来介绍直播间的网络连接：</p>
+  <ol start=''>
+    <li>
+      <p>路由器的接法是WAN进LAN出，即墙里出来的网线连路由器的WAN口，而其他所有需要用到路由器网络的设备则是连接到路由器的LAN口。</p>
+    </li>
+    <li>
+      <p>交换机的接口要连接到路由器的LAN口，可以把交换器理解为路由器LAN口的扩展。</p>
+    </li>
+    <li>
+      <p>使用交换器任意一个接口与切换台，导播台，电子调音台连接。</p>
+    </li>
+    <li>
+      <p>计算机在连接直播间的网络（无线或有线）后均可以连接切换台和音控台。</p>
+      <blockquote>
+        <p>当路由器由于意外情况断网时，电脑和手机有可能会自动断开 Wi-Fi 连接，因此请尽量使用有线网络连接。</p>
+      </blockquote>
+      <p>&nbsp;</p>
+      <p><img src="image/直播间网络设备连线.svg" alt="直播间网络设备连线" style="zoom:50%;" /></p>
+    </li>
 
-</ul>
-<h2 id='采集卡颜色问题'>采集卡颜色问题</h2>
-<p>在OBS视频采集设备的滤镜中，看到下方的效果滤镜，选择色彩校正，一般在彩排时校正完成。</p>
-<blockquote><p>注意：OBS添加滤镜会直接影响输出画面，即使你打开了“工作室模式”，也会同时影响预监和输出两个画面。解决方法是分别调整两个采集卡的滤镜。比如圆钢采集卡On Program时就调整绿联采集卡，然后把绿联采集卡On Program上去，再调整圆钢采集卡的滤镜。</p>
-</blockquote>
-<h2 id='采集卡信号问题'>采集卡信号问题</h2>
-<p>使用HDMI将信号输入采集卡，再通过 USB3.0 传入上传的计算机，在OBS的来源中选择视频采集设备，特别注意，圆刚的采集卡的分辨率/帧率类型要选择<strong>自定义</strong>，否则会出现无信号的状况，绿联随意，采声同上。</p>
-<h2 id='歌词显示问题'>歌词显示问题</h2>
-<p>在各种节目中，我们总能遇到奇葩的歌词，下面以今年的花之二重唱为例，讲述非中英文歌曲在放歌词时因听不懂而不能正常播放的处理方法</p>
-<ol start='' >
-<li>找选手沟通，询问歌词大意，或者全套歌词，输入到OBS上的文本，让其进行滚动播放。</li>
-<li>我们需要将OBS的画面投影到现场屏幕上，否则现场无法看到滚动歌词。</li>
-<li>使用矩阵连接电脑，将信号输出到大屏幕，在OBS中选择全屏投影，即可将OBS的program画面传输到现场大屏幕。</li>
+  </ol>
+  <center>HFLive13.0 直播间网络接线</center>
+  <p><img src="image/直播间网络设备连线 - 建议.svg" alt="直播间网络设备连线 - 建议" style="zoom:50%;" /></p>
+  <center>直播间网络接线（建议）</center>
+  <p>&nbsp;</p>
+  <h2 id='采集卡声音采集'>采集卡声音采集</h2>
+  <p>采集卡声音采集历来是一个问题，下面将介绍采集卡采声的几个方法</p>
+  <ul>
+    <li>直连：使用圆刚或者绿联的采集卡直接进行采集，在OBS音频输出模式中选择输出到桌面音频（绿联不需要），然后添加音频输出采集，即可采集到HDMI接收到的舞台干声，不推荐。</li>
+    <li>采集卡加音频线：众所周知，在矩阵的输出口上，有音频线接口，用音频线连接矩阵以及用来上传的计算机，使用线路采集即可采集到声音，较稳定。</li>
+    <li>采集卡加采集卡：圆刚采集直播画面，绿联采集直播声音，方法如单个采集卡.</li>
 
-</ol>
-<h2 id='校友连线'>校友连线</h2>
-<p>校友连线是华附春晚亮点节目之一，也是直播团队的中心工作之一。2021年我们采用了<strong>腾讯会议Rooms+采集卡</strong>方案。</p>
-<p>&nbsp;</p>
-<h3 id='连线-1'>连线</h3>
-<p><img src="image/2021春晚校友连线接线图.svg" referrerpolicy="no-referrer" alt="2021春晚校友连线接线图"></p>
-<center class="img-note">图 3.5.1-1 2021校友连线接线图</center>
-<ol start='' >
-<li><p>用<code>3.5mm公-卡侬公线</code>连接电脑和音响组的现场调音台。</p>
-</li>
-<li><p>用<code>6.5mm公-6.5mm公线</code>连接现场调音台输出和电子调音台输入，可以使用直播间预埋的线。</p>
-</li>
-<li><p>用<code>双路卡侬公-卡侬母线</code>连接电子调音台输出和切换台输入。</p>
-</li>
-<li><p>用<code>HDMI</code>连接切换台 Program输出 和矩阵输入。</p>
-</li>
-<li><p>用<code>HDMI</code>连接矩阵输出和采集卡，用<code>USB</code>连接采集卡和电脑。</p>
-</li>
-<li><p>用<code>HDMI</code>连接矩阵输出到现场大屏控制器。</p>
-<blockquote><p>现场调音台、现场大屏的连接可以与凌燃燃老师沟通。</p>
-</blockquote>
-</li>
+  </ul>
+  <h2 id='采集卡颜色问题'>采集卡颜色问题</h2>
+  <p>在OBS视频采集设备的滤镜中，看到下方的效果滤镜，选择色彩校正，一般在彩排时校正完成。</p>
+  <blockquote>
+    <p>注意：OBS添加滤镜会直接影响输出画面，即使你打开了“工作室模式”，也会同时影响预监和输出两个画面。解决方法是分别调整两个采集卡的滤镜。比如圆钢采集卡On Program时就调整绿联采集卡，然后把绿联采集卡On
+      Program上去，再调整圆钢采集卡的滤镜。</p>
+  </blockquote>
+  <h2 id='采集卡信号问题'>采集卡信号问题</h2>
+  <p>使用HDMI将信号输入采集卡，再通过 USB3.0
+    传入上传的计算机，在OBS的来源中选择视频采集设备，特别注意，圆刚的采集卡的分辨率/帧率类型要选择<strong>自定义</strong>，否则会出现无信号的状况，绿联随意，采声同上。</p>
+  <h2 id='歌词显示问题'>歌词显示问题</h2>
+  <p>在各种节目中，我们总能遇到奇葩的歌词，下面以今年的花之二重唱为例，讲述非中英文歌曲在放歌词时因听不懂而不能正常播放的处理方法</p>
+  <ol start=''>
+    <li>找选手沟通，询问歌词大意，或者全套歌词，输入到OBS上的文本，让其进行滚动播放。</li>
+    <li>我们需要将OBS的画面投影到现场屏幕上，否则现场无法看到滚动歌词。</li>
+    <li>使用矩阵连接电脑，将信号输出到大屏幕，在OBS中选择全屏投影，即可将OBS的program画面传输到现场大屏幕。</li>
 
-</ol>
-<h3 id='配置-1'>配置</h3>
-<h4 id='电脑配置'>电脑配置</h4>
-<ol start='' >
-<li>将电脑输出画质更改为与切换台一致.</li>
-<li>将默认音频输入设备更改为采集卡输入（如<code>Capture Audio</code>）.</li>
-<li>将默认音频输出设备更改为耳机孔输出.</li>
+  </ol>
+  <h2 id='校友连线'>校友连线</h2>
+  <p>校友连线是华附春晚亮点节目之一，也是直播团队的中心工作之一。2021年我们采用了<strong>腾讯会议Rooms+采集卡</strong>方案。</p>
+  <p>&nbsp;</p>
+  <h3 id='连线-1'>连线</h3>
+  <p><img src="image/2021春晚校友连线接线图.svg" referrerpolicy="no-referrer" alt="2021春晚校友连线接线图"></p>
+  <center class="img-note">图 3.5.1-1 2021校友连线接线图</center>
+  <ol start=''>
+    <li>
+      <p>用<code>3.5mm公-卡侬公线</code>连接电脑和音响组的现场调音台。</p>
+    </li>
+    <li>
+      <p>用<code>6.5mm公-6.5mm公线</code>连接现场调音台输出和电子调音台输入，可以使用直播间预埋的线。</p>
+    </li>
+    <li>
+      <p>用<code>双路卡侬公-卡侬母线</code>连接电子调音台输出和切换台输入。</p>
+    </li>
+    <li>
+      <p>用<code>HDMI</code>连接切换台 Program输出 和矩阵输入。</p>
+    </li>
+    <li>
+      <p>用<code>HDMI</code>连接矩阵输出和采集卡，用<code>USB</code>连接采集卡和电脑。</p>
+    </li>
+    <li>
+      <p>用<code>HDMI</code>连接矩阵输出到现场大屏控制器。</p>
+      <blockquote>
+        <p>现场调音台、现场大屏的连接可以与凌燃燃老师沟通。</p>
+      </blockquote>
+    </li>
 
-</ol>
-<h4 id='腾讯会议rooms配置'>腾讯会议Rooms配置</h4>
-<ol start='' >
-<li><p>将音频输出设为耳机孔输出（如 <code>耳机 (Synaptics Audio)</code>）.</p>
-<p><img src="image/image-20220120193550358.png" alt="image-20220120193550358" style="zoom: 67%;" /></p>
-<center>图 3.5.2.2-1 输出设备设置</center>
-</li>
-<li><p>音频输入设为<strong>采集卡输入</strong>（如<code>Capture Audio</code>)；在高级设置中，启用“使用设备原声”，开启“回声消除”，关闭“音频降噪”.</p>
-<p><img src="image/image-20220120200302769.jpg" alt="image-20220120200302769" style="zoom: 80%;" /></p>
-</li>
+  </ol>
+  <h3 id='配置-1'>配置</h3>
+  <h4 id='电脑配置'>电脑配置</h4>
+  <ol start=''>
+    <li>将电脑输出画质更改为与切换台一致.</li>
+    <li>将默认音频输入设备更改为采集卡输入（如<code>Capture Audio</code>）.</li>
+    <li>将默认音频输出设备更改为耳机孔输出.</li>
 
-</ol>
-<center>图 3.5.2.2-2 输入设备设置</center>
-<ol start='3' >
-<li><p>摄像头输入设为采集卡输入（如 <code>Capture Video</code>）.</p>
-<p><img src="image/image-20220109221717.jpg" alt="微信截图_20220109221717" style="zoom: 80%;" /></p>
-</li>
+  </ol>
+  <h4 id='腾讯会议rooms配置'>腾讯会议Rooms配置</h4>
+  <ol start=''>
+    <li>
+      <p>将音频输出设为耳机孔输出（如 <code>耳机 (Synaptics Audio)</code>）.</p>
+      <p><img src="image/image-20220120193550358.png" alt="image-20220120193550358" style="zoom: 67%;" /></p>
+      <center>图 3.5.2.2-1 输出设备设置</center>
+    </li>
+    <li>
+      <p>音频输入设为<strong>采集卡输入</strong>（如<code>Capture Audio</code>)；在高级设置中，启用“使用设备原声”，开启“回声消除”，关闭“音频降噪”.</p>
+      <p><img src="image/image-20220120200302769.jpg" alt="image-20220120200302769" style="zoom: 80%;" /></p>
+    </li>
 
-</ol>
-<center>图3.5.2.2-3 摄像头设置</center>
-<ol start='4' >
-<li><p>将双屏设置为“扩展模式”.</p>
-<p><img src="image/image-20220109222328.jpg" alt="image-20220109222328" style="zoom:80%;" /></p>
-</li>
+  </ol>
+  <center>图 3.5.2.2-2 输入设备设置</center>
+  <ol start='3'>
+    <li>
+      <p>摄像头输入设为采集卡输入（如 <code>Capture Video</code>）.</p>
+      <p><img src="image/image-20220109221717.jpg" alt="微信截图_20220109221717" style="zoom: 80%;" /></p>
+    </li>
 
-</ol>
-<p>&nbsp;</p>
+  </ol>
+  <center>图3.5.2.2-3 摄像头设置</center>
+  <ol start='4'>
+    <li>
+      <p>将双屏设置为“扩展模式”.</p>
+      <p><img src="image/image-20220109222328.jpg" alt="image-20220109222328" style="zoom:80%;" /></p>
+    </li>
+
+  </ol>
+  <p>&nbsp;</p>
   <center>图3.5.2.2-4 屏幕设置</center>
-<ol start='5' >
-<li><p>为防止意外，关闭“入会开启摄像头”“入会开启麦克风”“语音激励”“隐藏非视频参会者”；为获得更纯净的画面，关闭“会中常驻投屏码”.</p>
-<p><img src="image/image-20220120201134223.jpg" alt="图3.5.2.2-5 常规设置" style="zoom:80%;" /></p>
-<center>图3.5.2.2-5 常规设置</center>
-<blockquote><p>软件可能会经常提示“麦克风、扬声器、摄像头未经过腾讯会议Rooms硬件认证”等，忽略即可。</p>
-</blockquote>
-</li>
+  <ol start='5'>
+    <li>
+      <p>为防止意外，关闭“入会开启摄像头”“入会开启麦克风”“语音激励”“隐藏非视频参会者”；为获得更纯净的画面，关闭“会中常驻投屏码”.</p>
+      <p><img src="image/image-20220120201134223.jpg" alt="图3.5.2.2-5 常规设置" style="zoom:80%;" /></p>
+      <center>图3.5.2.2-5 常规设置</center>
+      <blockquote>
+        <p>软件可能会经常提示“麦克风、扬声器、摄像头未经过腾讯会议Rooms硬件认证”等，忽略即可。</p>
+      </blockquote>
+    </li>
 
-</ol>
-<h4 id='电子调音台配置-1'>电子调音台配置</h4>
-<p>	在电子调音台中，我们要确保现场调音台的输入能正确输出到 Main LR。</p>
-<blockquote><p>电子调音台相关配置可以请求音组协助，但还是建议技术组同学学习电子调音台基本操作方法。<a href='https://www.behringer.com/product.html?modelCode=P0BI8'>产品官网</a></p>
-</blockquote>
-<h4 id='矩阵设置'>矩阵设置</h4>
-<p>	在矩阵中，将切换台Program输出正确映射到采集卡和现场大屏。</p>
-<p>&nbsp;</p>
-<p>经过以上配置，参会者的声音能输出到现场的音响系统，参会者的画面能显示在切换台 Multiview 画面上，能输出到 Program；现场 Program 的画面和声音能够上传腾讯会议，参会者能听到现场的声音，能看到现场的画面。这也是校友连线的基本要求。</p>
-<h3 id='现场工作'>现场工作</h3>
-<p>   校友连线非常考验现场的操作和应急情况处置能力。</p>
-<p>   在主持人讲话时，提醒导播切到摄影机画面，在微信群通知下一个连线的地区。</p>
-<p>   主持人与连线地区互动时，将该地区设为焦点画面，提醒导播将画面切到校友。</p>
-<p>   出现突发故障时，第一时间使用对讲机通知主持人，立即确定故障位置并通知相关人员进行排障。</p>
-<blockquote><p>校友连线前，要进行大量的测试。必须至少一次按春晚流程进行1：1测试。同时，与校友连线负责人和主持人密切沟通，确认应急方案。</p>
-</blockquote>
-<h3 id='故障排除'>故障排除</h3>
-<ol start='' >
-<li>信号进不了切换台：检查HDMI连线、画质。</li>
-<li>现场大屏无信号：检查矩阵设置、HDMI线连接、现场大屏控制台设置。</li>
-<li>校友听不到声音：检查 Program 是否有声音，检查腾讯会议设置，检查麦克风是否关闭。</li>
-<li>现场听不到声音：检查腾讯会议输出设置，检查现场调音台设置，检查连线。</li>
+  </ol>
+  <h4 id='电子调音台配置-1'>电子调音台配置</h4>
+  <p> 在电子调音台中，我们要确保现场调音台的输入能正确输出到 Main LR。</p>
+  <blockquote>
+    <p>电子调音台相关配置可以请求音组协助，但还是建议技术组同学学习电子调音台基本操作方法。<a
+        href='https://www.behringer.com/product.html?modelCode=P0BI8'>产品官网</a></p>
+  </blockquote>
+  <h4 id='矩阵设置'>矩阵设置</h4>
+  <p> 在矩阵中，将切换台Program输出正确映射到采集卡和现场大屏。</p>
+  <p>&nbsp;</p>
+  <p>经过以上配置，参会者的声音能输出到现场的音响系统，参会者的画面能显示在切换台 Multiview 画面上，能输出到 Program；现场 Program
+    的画面和声音能够上传腾讯会议，参会者能听到现场的声音，能看到现场的画面。这也是校友连线的基本要求。</p>
+  <h3 id='现场工作'>现场工作</h3>
+  <p> 校友连线非常考验现场的操作和应急情况处置能力。</p>
+  <p> 在主持人讲话时，提醒导播切到摄影机画面，在微信群通知下一个连线的地区。</p>
+  <p> 主持人与连线地区互动时，将该地区设为焦点画面，提醒导播将画面切到校友。</p>
+  <p> 出现突发故障时，第一时间使用对讲机通知主持人，立即确定故障位置并通知相关人员进行排障。</p>
+  <blockquote>
+    <p>校友连线前，要进行大量的测试。必须至少一次按春晚流程进行1：1测试。同时，与校友连线负责人和主持人密切沟通，确认应急方案。</p>
+  </blockquote>
+  <h3 id='故障排除'>故障排除</h3>
+  <ol start=''>
+    <li>信号进不了切换台：检查HDMI连线、画质。</li>
+    <li>现场大屏无信号：检查矩阵设置、HDMI线连接、现场大屏控制台设置。</li>
+    <li>校友听不到声音：检查 Program 是否有声音，检查腾讯会议设置，检查麦克风是否关闭。</li>
+    <li>现场听不到声音：检查腾讯会议输出设置，检查现场调音台设置，检查连线。</li>
 
-</ol>
-<h3 id='提升-1'>提升</h3>
-<p>	由上面的一系列配置不难发现，腾讯会议Rooms输出的校友声音最终又送回了腾讯会议Rooms输入里，我们依靠“回声消除”才能勉强不造成直播事故。因此 HFLive14.0+ 一定要不断尝试创新，在确保稳定性的前提下努力提高质量。以下建议供参考：</p>
-<ol start='' >
-<li><p>优化接线方案</p>
-<p><img src="image/校友连线接线图 - 提高.svg" referrerpolicy="no-referrer" alt="校友连线接线图 - 提高"></p>
-</li>
-<li><p>尽量让校友多进行几次测试，特别是要让他们试一下像春晚那样大声喊的时候会不会炸麦。测试的时候要叫上音组的同学，也让他们演练一下到时候的音量控制。</p>
-</li>
-<li><p>让校友尽量佩戴耳机，或者让他们的扬声器尽量远离麦克风，防止回荡。（比如另外用一台手机入会来听现场声音，电脑来录画面和声音）.</p>
-</li>
+  </ol>
+  <h3 id='提升-1'>提升</h3>
+  <p> 由上面的一系列配置不难发现，腾讯会议Rooms输出的校友声音最终又送回了腾讯会议Rooms输入里，我们依靠“回声消除”才能勉强不造成直播事故。因此 HFLive14.0+
+    一定要不断尝试创新，在确保稳定性的前提下努力提高质量。以下建议供参考：</p>
+  <ol start=''>
+    <li>
+      <p>优化接线方案</p>
+      <p><img src="image/校友连线接线图 - 提高.svg" referrerpolicy="no-referrer" alt="校友连线接线图 - 提高"></p>
+    </li>
+    <li>
+      <p>尽量让校友多进行几次测试，特别是要让他们试一下像春晚那样大声喊的时候会不会炸麦。测试的时候要叫上音组的同学，也让他们演练一下到时候的音量控制。</p>
+    </li>
+    <li>
+      <p>让校友尽量佩戴耳机，或者让他们的扬声器尽量远离麦克风，防止回荡。（比如另外用一台手机入会来听现场声音，电脑来录画面和声音）.</p>
+    </li>
 
-</ol>
-<h2 id='无人机信号连接'>无人机信号连接</h2>
-<p>无人机机位主要在小歌手时使用，其独特的视角能大幅提高直播质量。2021年，HFLive13.0 使用的是<strong>DJI Mavic 2 + RTMP局域网传输 + OBS拉流 + 光端机 + 切换台</strong>方案，实现720P传输。</p>
-<p>该方案适用于任何大部分大疆无人机，此处以DJI Mavic Pro 为例。</p>
-<h3 id='准备'>准备</h3>
-<h4 id='硬件'>硬件</h4>
-<ul>
-<li>DJI Mavic Pro 无人机一台</li>
-<li>遥控器</li>
-<li>手机</li>
-<li>电脑</li>
-<li>光端机子机 (Blackmagic Camera Converter)</li>
-<li>光端机母机 (Blackmagic Studio Converter)</li>
-<li>切换台 (ATEM Production Studio 4K)</li>
+  </ol>
+  <h2 id='无人机信号连接'>无人机信号连接</h2>
+  <p>无人机机位主要在小歌手时使用，其独特的视角能大幅提高直播质量。2021年，HFLive13.0 使用的是<strong>DJI Mavic 2 + RTMP局域网传输 + OBS拉流 + 光端机 +
+      切换台</strong>方案，实现720P传输。</p>
+  <p>该方案适用于任何大部分大疆无人机，此处以DJI Mavic Pro 为例。</p>
+  <h3 id='准备'>准备</h3>
+  <h4 id='硬件'>硬件</h4>
+  <ul>
+    <li>DJI Mavic Pro 无人机一台</li>
+    <li>遥控器</li>
+    <li>手机</li>
+    <li>电脑</li>
+    <li>光端机子机 (Blackmagic Camera Converter)</li>
+    <li>光端机母机 (Blackmagic Studio Converter)</li>
+    <li>切换台 (ATEM Production Studio 4K)</li>
 
-</ul>
-<h4 id='手机软件'>手机软件</h4>
-<ul>
-<li>DJI Go 4</li>
-<li>RTMP-Server <a href='https://wwu.lanzout.com/io3Xsz1egvc'>（蓝奏云下载 访问码: f52x）</a>或 <a href='https://1drv.ms/u/s!An9BdN5oWRYghj7dU5rAuiv40oO_?e=EcPoSL'>OneDrive （可能需要✈）</a></li>
+  </ul>
+  <h4 id='手机软件'>手机软件</h4>
+  <ul>
+    <li>DJI Go 4</li>
+    <li>RTMP-Server <a href='https://wwu.lanzout.com/io3Xsz1egvc'>（蓝奏云下载 访问码: f52x）</a>或 <a
+        href='https://1drv.ms/u/s!An9BdN5oWRYghj7dU5rAuiv40oO_?e=EcPoSL'>OneDrive （可能需要✈）</a></li>
 
-</ul>
-<h4 id='电脑软件'>电脑软件</h4>
-<ul>
-<li>OBS（Open Broadcast Software）</li>
+  </ul>
+  <h4 id='电脑软件'>电脑软件</h4>
+  <ul>
+    <li>OBS（Open Broadcast Software）</li>
 
-</ul>
-<h3 id='连线-2'>连线</h3>
-<p>相关连线图如下：</p>
-<p><img src="image/小歌手无人机连线.svg" referrerpolicy="no-referrer" alt="无人机连线图"></p>
-<ol start='' >
-<li>参考无人机使用说明，将手机连接到无人机遥控器。</li>
-<li>将手机和电脑连到同一局域网下（同Wi-Fi）.</li>
-<li>用<code>HDMI</code>连接电脑和光端机子机，注意更改画质。</li>
-<li>用光纤连接光端机子机和母机（请线组协助）.</li>
-<li>用<code>SDI</code>将光端机母机连接到切换台。</li>
+  </ul>
+  <h3 id='连线-2'>连线</h3>
+  <p>相关连线图如下：</p>
+  <p><img src="image/小歌手无人机连线.svg" referrerpolicy="no-referrer" alt="无人机连线图"></p>
+  <ol start=''>
+    <li>参考无人机使用说明，将手机连接到无人机遥控器。</li>
+    <li>将手机和电脑连到同一局域网下（同Wi-Fi）.</li>
+    <li>用<code>HDMI</code>连接电脑和光端机子机，注意更改画质。</li>
+    <li>用光纤连接光端机子机和母机（请线组协助）.</li>
+    <li>用<code>SDI</code>将光端机母机连接到切换台。</li>
 
-</ol>
-<h3 id='配置-2'>配置</h3>
-<h4 id='服务器配置'>服务器配置</h4>
-<ol start='' >
-<li>打开 RTMP-Server 软件，开启服务。</li>
+  </ol>
+  <h3 id='配置-2'>配置</h3>
+  <h4 id='服务器配置'>服务器配置</h4>
+  <ol start=''>
+    <li>打开 RTMP-Server 软件，开启服务。</li>
 
-</ol>
-<p><img src="image/IMG_20220120_213300.jpg" alt="IMG_20220120_213300" style="zoom:50%;" /></p>
-<ol start='2' >
-<li>设置，防止手机杀后台。（请在搜索引擎搜索：<code>xx品牌手机如何防止杀后台</code>）</li>
+  </ol>
+  <p><img src="image/IMG_20220120_213300.jpg" alt="IMG_20220120_213300" style="zoom:50%;" /></p>
+  <ol start='2'>
+    <li>设置，防止手机杀后台。（请在搜索引擎搜索：<code>xx品牌手机如何防止杀后台</code>）</li>
 
-</ol>
-<h4 id='大疆飞控软件设置'>大疆飞控软件设置</h4>
-<ol start='' >
-<li>打开DJI Go 4，连接飞行器。</li>
+  </ol>
+  <h4 id='大疆飞控软件设置'>大疆飞控软件设置</h4>
+  <ol start=''>
+    <li>打开DJI Go 4，连接飞行器。</li>
 
-</ol>
-<p><img src="image/1642688258980.jpg" alt="连接飞行器" style="zoom: 67%;" /></p>
-<center>连接飞行器</center>
-<ol start='2' >
-<li>打开设置，“选择直播平台”</li>
+  </ol>
+  <p><img src="image/1642688258980.jpg" alt="连接飞行器" style="zoom: 67%;" /></p>
+  <center>连接飞行器</center>
+  <ol start='2'>
+    <li>打开设置，“选择直播平台”</li>
 
-</ol>
-<p><img src="image/IMG_20220121_100116.jpg" alt="选择直播平台" style="zoom: 25%;" /></p>
-<ol start='3' >
-<li>填入推流地址，开始直播</li>
+  </ol>
+  <p><img src="image/IMG_20220121_100116.jpg" alt="选择直播平台" style="zoom: 25%;" /></p>
+  <ol start='3'>
+    <li>填入推流地址，开始直播</li>
 
-</ol>
-<p><img src="image/IMG_20220121_100053.jpg" alt="填入直播地址" style="zoom:25%;" /></p>
-<p><img src="image/IMG_20220121_100039.jpg" alt="开始推流" style="zoom:25%;" /></p>
-<ol start='4' >
-<li>推流开始后，能在左上角看到相关提示。若能看到帧率值则代表直播正常，若FPS为0则代表推流失败，需检查服务器状态和推流参数。</li>
+  </ol>
+  <p><img src="image/IMG_20220121_100053.jpg" alt="填入直播地址" style="zoom:25%;" /></p>
+  <p><img src="image/IMG_20220121_100039.jpg" alt="开始推流" style="zoom:25%;" /></p>
+  <ol start='4'>
+    <li>推流开始后，能在左上角看到相关提示。若能看到帧率值则代表直播正常，若FPS为0则代表推流失败，需检查服务器状态和推流参数。</li>
 
-</ol>
-<h4 id='obs-配置'>OBS 配置</h4>
-<ol start='' >
-<li><p>启动OBS，新建媒体源。</p>
-<p><img src="image/image-20220120215117990.jpg" referrerpolicy="no-referrer" alt="image-20220120215117990"></p>
-</li>
-<li><p>在媒体源设置中，取消勾选“本地文件”，“网络缓冲”设置为<code>0 MB</code>，“输入”设置为<code>rtmp://手机IP地址/live/drone</code>，确认设置。</p>
-</li>
+  </ol>
+  <h4 id='obs-配置'>OBS 配置</h4>
+  <ol start=''>
+    <li>
+      <p>启动OBS，新建媒体源。</p>
+      <p><img src="image/image-20220120215117990.jpg" referrerpolicy="no-referrer" alt="image-20220120215117990"></p>
+    </li>
+    <li>
+      <p>在媒体源设置中，取消勾选“本地文件”，“网络缓冲”设置为<code>0 MB</code>，“输入”设置为<code>rtmp://手机IP地址/live/drone</code>，确认设置。</p>
+    </li>
 
-</ol>
-<p><img src="image/image-20220120215213798.jpg" referrerpolicy="no-referrer" alt="image-20220120215213798"></p>
-<ol start='3' >
-<li>经过以上设置后即可在OBS窗口中看到无人机画面</li>
+  </ol>
+  <p><img src="image/image-20220120215213798.jpg" referrerpolicy="no-referrer" alt="image-20220120215213798"></p>
+  <ol start='3'>
+    <li>经过以上设置后即可在OBS窗口中看到无人机画面</li>
 
-</ol>
-<p><img src="image/image-20220120215640775.jpg" referrerpolicy="no-referrer" alt="image-20220120215640775"></p>
-<ol start='4' >
-<li>右键源，全屏投影到第二屏幕，这时就能在切换台Multiview中看到无人机的画面了。</li>
+  </ol>
+  <p><img src="image/image-20220120215640775.jpg" referrerpolicy="no-referrer" alt="image-20220120215640775"></p>
+  <ol start='4'>
+    <li>右键源，全屏投影到第二屏幕，这时就能在切换台Multiview中看到无人机的画面了。</li>
 
-</ol>
-<p><img src="image/image-20220120215818888.png" referrerpolicy="no-referrer" alt="image-20220120215818888"></p>
-<h3 id='提升-2'>提升</h3>
-<p>该方案成本低，但也有不少缺点，包括延迟高、配置麻烦、稳定性不佳、画质低。因此，我们建议 HFLive14.0+ 换用更好的方案。以下两个方案供参考：</p>
-<ul>
-<li>租用/购买大疆带屏遥控器，其能输出HDMI信号</li>
-<li>使用大疆精灵系列无人机，购买遥控器HDMI输出模块</li>
+  </ol>
+  <p><img src="image/image-20220120215818888.png" referrerpolicy="no-referrer" alt="image-20220120215818888"></p>
+  <h3 id='提升-2'>提升</h3>
+  <p>该方案成本低，但也有不少缺点，包括延迟高、配置麻烦、稳定性不佳、画质低。因此，我们建议 HFLive14.0+ 换用更好的方案。以下两个方案供参考：</p>
+  <ul>
+    <li>租用/购买大疆带屏遥控器，其能输出HDMI信号</li>
+    <li>使用大疆精灵系列无人机，购买遥控器HDMI输出模块</li>
 
-</ul>
-<p>&nbsp;</p>
-<h1 id='其它技术'>其它技术</h1>
-<h2 id='舞台干声处理'>舞台干声处理</h2>
-<p>舞台干声，是指现场调音台输出的各种声音，主要包括：现场各种表演麦克风、表演音乐等。舞台干声是的收录的处理是直播的重要内容之一。如果没有声音，画面拍得再好也是一次失败的直播。直播收声原理如下图所示：</p>
-<p><img src="image/舞台干声收录.svg" referrerpolicy="no-referrer" alt="舞台干声收录"></p>
-<h3 id='接线'>接线</h3>
-<ol start='' >
-<li>使用两路<code>6.5mm-6.5mm</code>音频线连接现场调音台输出和电子调音台的输入。HFLive13.0使用的是在墙体内预埋的音频线，连接现场调音台的<code>AUX3/4</code>输出。</li>
-<li>使用两路<code>卡侬</code>（XLR）线连接电子调音台的<code>Main LR</code>输出和切换台的输入。</li>
+  </ul>
+  <p>&nbsp;</p>
+  <h1 id='其它技术'>其它技术</h1>
+  <h2 id='舞台干声处理'>舞台干声处理</h2>
+  <p>舞台干声，是指现场调音台输出的各种声音，主要包括：现场各种表演麦克风、表演音乐等。舞台干声是的收录的处理是直播的重要内容之一。如果没有声音，画面拍得再好也是一次失败的直播。直播收声原理如下图所示：</p>
+  <p><img src="image/舞台干声收录.svg" referrerpolicy="no-referrer" alt="舞台干声收录"></p>
+  <h3 id='接线'>接线</h3>
+  <ol start=''>
+    <li>使用两路<code>6.5mm-6.5mm</code>音频线连接现场调音台输出和电子调音台的输入。HFLive13.0使用的是在墙体内预埋的音频线，连接现场调音台的<code>AUX3/4</code>输出。</li>
+    <li>使用两路<code>卡侬</code>（XLR）线连接电子调音台的<code>Main LR</code>输出和切换台的输入。</li>
 
-</ol>
-<h3 id='配置-3'>配置</h3>
-<h4 id='电子调音台配置-2'>电子调音台配置</h4>
-<p>	调整电子调音台，使输入的舞台干声能正常输出到<code>Main LR</code>.</p>
-<h4 id='切换台配置'>切换台配置</h4>
-<p>	在切换台软件控制面板的音频面板中，启用来自XLR的声音，调整音量大小。</p>
-<p>&nbsp;</p>
-<p>经过以上设置后，舞台干声即可进入直播 Program 中。</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h2 id='现场声的收录'>现场声的收录</h2>
-<p>现场声音的收录是直播声音的重要一环，HFLive12.0和13.0在这方面有所欠缺，HFLive14.0+ 务必重视直播的声音！</p>
-<h3 id='连线-3'>连线</h3>
-<p><img src="image/现场声的收录-摄影机.svg" referrerpolicy="no-referrer" alt="现场声的收录"></p>
-<center>方案一</center>
-<p><img src="image/现场声的收录-子机.svg" referrerpolicy="no-referrer" alt="现场声的收录"></p>
-<center>方案二</center>
-<p>现场声的连线非常简单，只需要将一只（最好是两只）麦克风连接到摄影机或光端机子机上，声音信号就会随视频一起传回切换台。</p>
-<h3 id='配置-4'>配置</h3>
-<p>若连接至摄影机，需要在摄影机中设置音频为 XLR 输入，具体参考 <a href='https://documents.blackmagicdesign.com/UserManuals/BlackmagicURSAMiniManual.pdf#page=1580'>URSA 说明书</a> 第1580页。</p>
-<p>若连接至子机，子机会自动采用外接的麦克风，具体参考 <a href='https://documents.blackmagicdesign.com/UserManuals/ATEMConvertersManual.pdf#page=138'>子机说明书</a> 第138页<code>连接音频</code>部分。</p>
-<p>无论采取哪种连接，都要在切换台中启用该路信号的音频，并调整音量大小，具体参考 <a href='https://documents.blackmagicdesign.com/UserManuals/ATEM_Production_Studio_Switchers_Manual.pdf#page=1217'>切换台说明书</a> 第1217页。</p>
-<p>&nbsp;</p>
+  </ol>
+  <h3 id='配置-3'>配置</h3>
+  <h4 id='电子调音台配置-2'>电子调音台配置</h4>
+  <p> 调整电子调音台，使输入的舞台干声能正常输出到<code>Main LR</code>.</p>
+  <h4 id='切换台配置'>切换台配置</h4>
+  <p> 在切换台软件控制面板的音频面板中，启用来自XLR的声音，调整音量大小。</p>
+  <p>&nbsp;</p>
+  <p>经过以上设置后，舞台干声即可进入直播 Program 中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h2 id='现场声的收录'>现场声的收录</h2>
+  <p>现场声音的收录是直播声音的重要一环，HFLive12.0和13.0在这方面有所欠缺，HFLive14.0+ 务必重视直播的声音！</p>
+  <h3 id='连线-3'>连线</h3>
+  <p><img src="image/现场声的收录-摄影机.svg" referrerpolicy="no-referrer" alt="现场声的收录"></p>
+  <center>方案一</center>
+  <p><img src="image/现场声的收录-子机.svg" referrerpolicy="no-referrer" alt="现场声的收录"></p>
+  <center>方案二</center>
+  <p>现场声的连线非常简单，只需要将一只（最好是两只）麦克风连接到摄影机或光端机子机上，声音信号就会随视频一起传回切换台。</p>
+  <h3 id='配置-4'>配置</h3>
+  <p>若连接至摄影机，需要在摄影机中设置音频为 XLR 输入，具体参考 <a
+      href='https://documents.blackmagicdesign.com/UserManuals/BlackmagicURSAMiniManual.pdf#page=1580'>URSA 说明书</a>
+    第1580页。</p>
+  <p>若连接至子机，子机会自动采用外接的麦克风，具体参考 <a
+      href='https://documents.blackmagicdesign.com/UserManuals/ATEMConvertersManual.pdf#page=138'>子机说明书</a>
+    第138页<code>连接音频</code>部分。</p>
+  <p>无论采取哪种连接，都要在切换台中启用该路信号的音频，并调整音量大小，具体参考 <a
+      href='https://documents.blackmagicdesign.com/UserManuals/ATEM_Production_Studio_Switchers_Manual.pdf#page=1217'>切换台说明书</a>
+    第1217页。</p>
+  <p>&nbsp;</p>
 </body>
+
 </html>
