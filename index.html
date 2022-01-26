@@ -13,18 +13,31 @@
 
   <link rel="stylesheet" href="style.css" />
   <title>HFLive13.0技术指南</title>
+
+  <div class="mdui-appbar mdui-color-theme mdui-appbar-fixed">
+    <div class="mdui-toolbar ">
+      <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+        <i class="mdui-icon material-icons">menu</i>
+      </a>
+      <span class="mdui-typo-title">HFLive13.0技术指南</span>
+      <div class="mdui-toolbar-spacer"></div>
+      
+    </div>
+  </div>
+  
 </head>
 
 <body class="mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-auto">
-  <div class="mdui-container mdui-typo">
-    <h1 class="mdui-center">HFLive13.0 技术指南</h1>
-    <h1 id='拍摄组'>拍摄组</h1>
+  
+  <a id="anchor-top"></a>
+  <div class="mdui-container mdui-typo p-drawer">
+    <h1 class="title mdui-text-color-theme" id='拍摄组'>拍摄组</h1>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <h1 id='线路组'>线路组</h1>
+    <h1 class="title mdui-text-color-theme" id='线路组'>线路组</h1>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <h1 id='技术组'>技术组</h1>
+    <h1 class="title mdui-text-color-theme" id='技术组'>技术组</h1>
     <h2 id='直播间网络设备连接'>直播间网络设备连接</h2>
     <p>我们直播所用到的设备都是通过同一个局域网进行连接，首先我们来介绍直播间的网络连接：</p>
     <ol start=''>
@@ -77,7 +90,8 @@
     <p>校友连线是华附春晚亮点节目之一，也是直播团队的中心工作之一。2021年我们采用了<strong>腾讯会议Rooms+采集卡</strong>方案。</p>
     <p>&nbsp;</p>
     <h3 id='连线-1'>连线</h3>
-    <p><img class="diagram mdui-img-fluid" src="image/2021春晚校友连线接线图.svg" referrerpolicy="no-referrer" alt="2021春晚校友连线接线图"></p>
+    <p><img class="diagram mdui-img-fluid" src="image/2021春晚校友连线接线图.svg" referrerpolicy="no-referrer"
+        alt="2021春晚校友连线接线图"></p>
     <ol start=''>
       <li>
         <p>用<code>3.5mm公-卡侬公线</code>连接电脑和音响组的现场调音台。</p>
@@ -115,21 +129,25 @@
     <ol start=''>
       <li>
         <p>将音频输出设为耳机孔输出（如 <code>耳机 (Synaptics Audio)</code>）.</p>
-        <p><img class="mdui-img-fluid" src="image/image-20220120193550358.png" alt="image-20220120193550358" style="zoom: 67%;" /></p>
+        <p><img class="mdui-img-fluid" src="image/image-20220120193550358.png" alt="image-20220120193550358"
+            style="zoom: 67%;" /></p>
       </li>
       <li>
         <p>音频输入设为<strong>采集卡输入</strong>（如<code>Capture Audio</code>)；在高级设置中，启用“使用设备原声”，开启“回声消除”，关闭“音频降噪”.</p>
-        <p><img class="mdui-img-fluid" src="image/image-20220120200302769.jpg" alt="image-20220120200302769" style="zoom: 80%;" /></p>
+        <p><img class="mdui-img-fluid" src="image/image-20220120200302769.jpg" alt="image-20220120200302769"
+            style="zoom: 80%;" /></p>
       </li>
 
       <li>
         <p>摄像头输入设为采集卡输入（如 <code>Capture Video</code>）.</p>
-        <p><img class="mdui-img-fluid" src="image/image-20220109221717.jpg" alt="微信截图_20220109221717" style="zoom: 80%;" /></p>
+        <p><img class="mdui-img-fluid" src="image/image-20220109221717.jpg" alt="微信截图_20220109221717"
+            style="zoom: 80%;" /></p>
       </li>
 
       <li>
         <p>将双屏设置为“扩展模式”.</p>
-        <p><img class="mdui-img-fluid" src="image/image-20220109222328.jpg" alt="image-20220109222328" style="zoom:80%;" /></p>
+        <p><img class="mdui-img-fluid" src="image/image-20220109222328.jpg" alt="image-20220109222328"
+            style="zoom:80%;" /></p>
       </li>
 
     </ol>
@@ -137,7 +155,8 @@
     <ol start='5'>
       <li>
         <p>为防止意外，关闭“入会开启摄像头”“入会开启麦克风”“语音激励”“隐藏非视频参会者”；为获得更纯净的画面，关闭“会中常驻投屏码”.</p>
-        <p><img class="mdui-img-fluid" src="image/image-20220120201134223.jpg" alt="图3.5.2.2-5 常规设置" style="zoom:80%;" /></p>
+        <p><img class="mdui-img-fluid" src="image/image-20220120201134223.jpg" alt="图3.5.2.2-5 常规设置"
+            style="zoom:80%;" /></p>
         <blockquote>
           <p>软件可能会经常提示“麦克风、扬声器、摄像头未经过腾讯会议Rooms硬件认证”等，忽略即可。</p>
         </blockquote>
@@ -177,7 +196,8 @@
     <ol start=''>
       <li>
         <p>优化接线方案</p>
-        <p><img class="diagram mdui-img-fluid" class="diagram" src="image/校友连线接线图 - 提高.svg" referrerpolicy="no-referrer" alt="校友连线接线图 - 提高"></p>
+        <p><img class="diagram mdui-img-fluid" class="diagram" src="image/校友连线接线图 - 提高.svg" referrerpolicy="no-referrer"
+            alt="校友连线接线图 - 提高"></p>
       </li>
       <li>
         <p>尽量让校友多进行几次测试，特别是要让他们试一下像春晚那样大声喊的时候会不会炸麦。测试的时候要叫上音组的同学，也让他们演练一下到时候的音量控制。</p>
@@ -231,7 +251,8 @@
     <ol start=''>
       <li>
         <p>打开 RTMP-Server 软件，开启服务。</p>
-        <p><img class="mdui-img-fluid" src="image/IMG_20220120_213300.jpg" alt="IMG_20220120_213300" style="zoom:50%;" /></p>
+        <p><img class="mdui-img-fluid" src="image/IMG_20220120_213300.jpg" alt="IMG_20220120_213300"
+            style="zoom:50%;" /></p>
       </li>
       <li>
         <p>设置，防止手机杀后台。（请在搜索引擎搜索：<code>xx品牌手机如何防止杀后台</code>）</p>
@@ -261,19 +282,23 @@
     <ol start=''>
       <li>
         <p>启动OBS，新建媒体源。</p>
-        <p><img class="mdui-img-fluid" src="image/image-20220120215117990.jpg" referrerpolicy="no-referrer" alt="image-20220120215117990"></p>
+        <p><img class="mdui-img-fluid" src="image/image-20220120215117990.jpg" referrerpolicy="no-referrer"
+            alt="image-20220120215117990"></p>
       </li>
       <li>
         <p>在媒体源设置中，取消勾选“本地文件”，“网络缓冲”设置为<code>0 MB</code>，“输入”设置为<code>rtmp://手机IP地址/live/drone</code>，确认设置。</p>
-        <p><img class="mdui-img-fluid" src="image/image-20220120215213798.jpg" referrerpolicy="no-referrer" alt="image-20220120215213798"></p>
+        <p><img class="mdui-img-fluid" src="image/image-20220120215213798.jpg" referrerpolicy="no-referrer"
+            alt="image-20220120215213798"></p>
       </li>
       <li>
         <p>经过以上设置后即可在OBS窗口中看到无人机画面</p>
-        <p><img class="mdui-img-fluid" src="image/image-20220120215640775.jpg" referrerpolicy="no-referrer" alt="image-20220120215640775"></p>
+        <p><img class="mdui-img-fluid" src="image/image-20220120215640775.jpg" referrerpolicy="no-referrer"
+            alt="image-20220120215640775"></p>
       </li>
       <li>
         <p>右键源，全屏投影到第二屏幕，这时就能在切换台Multiview中看到无人机的画面了。</p>
-        <p><img class="mdui-img-fluid" src="image/image-20220120215818888.png" referrerpolicy="no-referrer" alt="image-20220120215818888"></p>
+        <p><img class="mdui-img-fluid" src="image/image-20220120215818888.png" referrerpolicy="no-referrer"
+            alt="image-20220120215818888"></p>
       </li>
     </ol>
 
@@ -284,10 +309,11 @@
       <li>使用大疆精灵系列无人机，购买遥控器HDMI输出模块</li>
     </ul>
 
-    <h1 id='其它技术'>其它技术</h1>
+    <h1 class="title mdui-text-color-theme" id='其它技术'>其它技术</h1>
     <h2 id='舞台干声处理'>舞台干声处理</h2>
     <p>舞台干声，是指现场调音台输出的各种声音，主要包括：现场各种表演麦克风、表演音乐等。舞台干声是的收录的处理是直播的重要内容之一。如果没有声音，画面拍得再好也是一次失败的直播。直播收声原理如下图所示：</p>
-    <p><img class="diagram mdui-img-fluid" class="diagram" src="image/舞台干声收录.svg" referrerpolicy="no-referrer" alt="舞台干声收录"></p>
+    <p><img class="diagram mdui-img-fluid" class="diagram" src="image/舞台干声收录.svg" referrerpolicy="no-referrer"
+        alt="舞台干声收录"></p>
     <h3 id='接线'>接线</h3>
 
     <ol start=''>
@@ -306,9 +332,11 @@
     <p>现场声音的收录是直播声音的重要一环，HFLive12.0和13.0在这方面有所欠缺，HFLive14.0+ 务必重视直播的声音！</p>
     <h3 id='连线-3'>连线</h3>
     <p class="mdui-center center-text">方案一</p>
-    <p><img class="diagram mdui-img-fluid" class="diagram" src="image/现场声的收录-摄影机.svg" referrerpolicy="no-referrer" alt="现场声的收录"></p>
+    <p><img class="diagram mdui-img-fluid" class="diagram" src="image/现场声的收录-摄影机.svg" referrerpolicy="no-referrer"
+        alt="现场声的收录"></p>
     <p class="mdui-center center-text">方案二</p>
-    <p><img class="diagram mdui-img-fluid" class="diagram" src="image/现场声的收录-子机.svg" referrerpolicy="no-referrer" alt="现场声的收录"></p>
+    <p><img class="diagram mdui-img-fluid" class="diagram" src="image/现场声的收录-子机.svg" referrerpolicy="no-referrer"
+        alt="现场声的收录"></p>
     <p>现场声的连线非常简单，只需要将一只（最好是两只）麦克风连接到摄影机或光端机子机上，声音信号就会随视频一起传回切换台。</p>
     <h3 id='配置-4'>配置</h3>
     <p>若连接至摄影机，需要在摄影机中设置音频为 XLR 输入，具体参考 <a

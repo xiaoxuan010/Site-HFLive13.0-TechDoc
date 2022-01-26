@@ -3,3 +3,11 @@
         filter: invert();
     }
 }
+body{
+    padding-top: 80px;
+}
+title{
+    font-size: 34px;
+    line-height: 40px;
+    margin: 0 400px 30px 0;
+}
