@@ -1,13 +1,27 @@
-@media (prefers-color-scheme: dark){
-    .diagram{
+@media (prefers-color-scheme: dark) {
+    .diagram {
         filter: invert();
     }
 }
-body{
+
+body {
     padding-top: 80px;
 }
-title{
+
+title {
     font-size: 34px;
     line-height: 40px;
     margin: 0 400px 30px 0;
+}
+
+@media (min-width: 600px) {
+    .mdui-drawer {
+        top: 64px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 959.9px) {
+    .mdui-drawer {
+        top: 48px;
+    }
 }
