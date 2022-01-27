@@ -17,10 +17,10 @@
     <!-- MDUI 顶部应用栏-->
     <div class="mdui-appbar mdui-color-theme mdui-appbar-fixed">
         <div class="mdui-toolbar ">
-            <button class="mdui-btn mdui-btn-icon" id='left-drawer-button'>
+            <button class="mdui-btn mdui-btn-icon" id='left-drawer-button' mdui-drawer="{target: '#left-drawer', swipe: true}">
                 <i class="mdui-icon material-icons">menu</i>
             </button>
-            <span class="mdui-typo-title">HFLive13.0技术指南</span>
+            <a href=""><span class="mdui-typo-title">HFLive13.0技术指南</span></a>
             <div class="mdui-toolbar-spacer"></div>
         </div>
     </div>
@@ -30,7 +30,7 @@
 
 <body class="mdui-theme-primary-indigo mdui-theme-accent-pink mdui-drawer-body-left mdui-theme-layout-auto">
     <!-- MDUI 侧边栏导航 由JavaScript生成-->
-    <div class="mdui-drawer" id="left-drawer" mdui-drawer="{target: '#left-drawer', swipe: true}">
+    <div class="mdui-drawer" id="left-drawer">
         <div class="mdui-collapse" id="drawer-collapse" mdui-collapse="{accordion: true}">
             <!-- 拍摄组 -->
             <div class="mdui-collapse-item">

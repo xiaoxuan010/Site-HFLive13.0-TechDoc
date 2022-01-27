@@ -7,25 +7,10 @@ question_list_list.each(function (indexi, elementi) {
     quesion_list.each(function (indexj, element) {
         var html = "<a class='navigation-list-item-a' href='#"
             + $(element).children('a')[0].id
-            + "'><div class='mdui-list-item mdui-ripple'>"
+            + "' mdui-drawer-close><div class='mdui-list-item mdui-ripple'>"
             + $(element).text()
             + "</div></a>";
         document.getElementById(quesion_list_id[indexi]).innerHTML += html;
     });
 });
 mdui.mutation();
-
-//事件绑定
-var left_drawer_inst = new mdui.Drawer('#left-drawer');
-$('#left-drawer-button').on('click', function (e) {
-    left_drawer_inst.toggle();
-});
-
-$('.navigation-list-item-a').on('click', function (e) {
-    var width = parseInt(document.body.style.width);
-    if (width < 1024) {
-        setTimeout(function () {
-            left_drawer_inst.close();
-        }, 100);
-    }
-})
