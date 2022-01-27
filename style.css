@@ -8,10 +8,33 @@ body {
     padding-top: 80px;
 }
 
-title {
-    font-size: 34px;
-    line-height: 40px;
-    margin: 0 400px 30px 0;
+.group-title {
+    margin-bottom: 30px!important;
+    margin-top: 2em!important;
+    padding: 80px 0 0;
+    position: relative;
+}
+
+.group-title:first-child {
+    margin-top: 0!important;
+    padding-top: 0!important;
+}
+
+.group-title+.question-title{
+    margin-top: 0!important;
+}
+.mdui-typo h2 {
+    font-size: 1.8em;
+}
+.question-title {
+    font-weight: 700!important;
+    margin: 84px 0 30px!important;
+    position: relative;
+}
+
+.anchor {
+    position: absolute;
+    top: -3.2em;
 }
 
 @media (min-width: 600px) {
