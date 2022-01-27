@@ -19,5 +19,13 @@ mdui.mutation();
 var left_drawer_inst = new mdui.Drawer('#left-drawer');
 $('#left-drawer-button').on('click', function (e) {
     left_drawer_inst.toggle();
-    console.log('click')
 });
+
+$('.navigation-list-item-a').on('click', function (e) {
+    var width = parseInt(document.body.style.width);
+    if (width < 1024) {
+        setTimeout(function () {
+            left_drawer_inst.close();
+        }, 100);
+    }
+})

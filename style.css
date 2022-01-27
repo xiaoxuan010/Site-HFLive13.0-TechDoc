@@ -1,9 +1,16 @@
+/* 黑夜模式矢量图反转颜色 */
 @media (prefers-color-scheme: dark) {
     .diagram {
         filter: invert();
     }
 }
 
+/* 页内跳转平滑滚动 */
+html{
+    scroll-behavior: smooth;
+}
+
+/* 避免内容被appBar遮挡 */
 body {
     padding-top: 80px;
 }
@@ -23,9 +30,11 @@ body {
 .group-title+.question-title{
     margin-top: 0!important;
 }
+
 .mdui-typo h2 {
     font-size: 1.8em;
 }
+
 .question-title {
     font-weight: 700!important;
     margin: 84px 0 30px!important;
@@ -37,12 +46,14 @@ body {
     top: -3.2em;
 }
 
+/* 电脑 */
 @media (min-width: 600px) {
     .mdui-drawer {
         top: 64px;
     }
 }
 
+/* 手机 */
 @media (orientation: landscape) and (max-width: 959.9px) {
     .mdui-drawer {
         top: 48px;
