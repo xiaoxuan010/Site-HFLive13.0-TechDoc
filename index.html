@@ -17,7 +17,7 @@
     <!-- MDUI 顶部应用栏-->
     <div class="mdui-appbar mdui-color-theme mdui-appbar-fixed">
         <div class="mdui-toolbar ">
-            <button mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon">
+            <button class="mdui-btn mdui-btn-icon" id='left-drawer-button'>
                 <i class="mdui-icon material-icons">menu</i>
             </button>
             <span class="mdui-typo-title">HFLive13.0技术指南</span>
@@ -30,8 +30,8 @@
 
 <body class="mdui-theme-primary-indigo mdui-theme-accent-pink mdui-drawer-body-left mdui-theme-layout-auto">
     <!-- MDUI 侧边栏导航 由JavaScript生成-->
-    <div class="mdui-drawer" id="left-drawer">
-        <div class="mdui-collapse" id="drawer-collapse" mdui-collapse>
+    <div class="mdui-drawer" id="left-drawer" mdui-drawer='{swipe: true}'>
+        <div class="mdui-collapse" id="drawer-collapse" mdui-collapse="{accordion: true}">
             <!-- 拍摄组 -->
             <div class="mdui-collapse-item">
                 <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
@@ -71,7 +71,7 @@
             <!-- 其他技术 -->
             <div class="mdui-collapse-item">
                 <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                    <i class="mdui-icon mdui-text-color-blue material-icons mdui-list-item-icon">add</i>
+                    <i class="mdui-icon mdui-text-color-green material-icons mdui-list-item-icon">add</i>
                     <div class="mdui-list-item-content">其他技术</div>
                     <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
                 </div>

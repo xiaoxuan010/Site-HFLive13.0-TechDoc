@@ -14,3 +14,10 @@ question_list_list.each(function (indexi, elementi) {
     });
 });
 mdui.mutation();
+
+//事件绑定
+var left_drawer_inst = new mdui.Drawer('#left-drawer');
+$('#left-drawer-button').on('click', function (e) {
+    left_drawer_inst.toggle();
+    console.log('click')
+});
