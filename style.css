@@ -10,21 +10,10 @@ html{
     scroll-behavior: smooth;
 }
 
-/* 避免内容被appBar遮挡 */
-body {
-    padding-top: 80px;
-}
-
 .group-title {
     margin-bottom: 30px!important;
-    margin-top: 2em!important;
     padding: 80px 0 0;
     position: relative;
-}
-
-.group-title:first-child {
-    margin-top: 0!important;
-    padding-top: 0!important;
 }
 
 .group-title+.question-title{
