@@ -15,13 +15,20 @@
     <title>HFLive13.0技术指南</title>
 
     <!-- MDUI 顶部应用栏-->
-    <div class="mdui-appbar mdui-color-theme mdui-appbar-fixed">
+    <div id="main-appbar" class="mdui-appbar mdui-color-theme mdui-appbar-fixed">
         <div class="mdui-toolbar ">
-            <button class="mdui-btn mdui-btn-icon" id='left-drawer-button' mdui-drawer="{target: '#left-drawer', swipe: true}">
+            <button class="mdui-btn mdui-btn-icon" id='left-drawer-button'
+                mdui-drawer="{target: '#left-drawer', swipe: true}">
                 <i class="mdui-icon material-icons">menu</i>
             </button>
-            <a href=""><span class="mdui-typo-title">HFLive13.0技术指南</span></a>
+            <a href="" class="mdui-hidden-xs mdui-typo-headline">HFLive13.0</a>
+            <a href=""><span class="mdui-typo-title">技术指南</span></a>
             <div class="mdui-toolbar-spacer"></div>
+            <a href="https://github.com/xiaoxuan010/Site-HFLive13.0-TechDoc/" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
+                  <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+                </svg>
+              </a>
         </div>
     </div>
 
@@ -373,43 +380,43 @@
         <div class="group" id="other-group">
             <h1 class="title mdui-text-color-theme group-title" id='其它技术'>其它技术</h1>
             <h2 class="question-title" id='舞台干声处理'>舞台干声处理<a class="anchor" id="dry-sound"></a></h2>
-                <p>舞台干声，是指现场调音台输出的各种声音，主要包括：现场各种表演麦克风、表演音乐等。舞台干声是的收录的处理是直播的重要内容之一。如果没有声音，画面拍得再好也是一次失败的直播。直播收声原理如下图所示：</p>
-                <p><img class="diagram mdui-img-fluid" class="diagram" src="image/舞台干声收录.svg" referrerpolicy="no-referrer"
-                        alt="舞台干声收录"></p>
-                <h3 id='接线'>接线</h3>
-                <ol start=''>
-                    <li>使用两路<code>6.5mm-6.5mm</code>音频线连接现场调音台输出和电子调音台的输入。HFLive13.0使用的是在墙体内预埋的音频线，连接现场调音台的<code>AUX3/4</code>输出。
-                    </li>
-                    <li>使用两路<code>卡侬</code>（XLR）线连接电子调音台的<code>Main LR</code>输出和切换台的输入。</li>
-                </ol>
-                <h3 id='配置-3'>配置</h3>
-                <h4 id='电子调音台配置-2'>电子调音台配置</h4>
-                <p>调整电子调音台，使输入的舞台干声能正常输出到<code>Main LR</code>.</p>
-                <h4 id='切换台配置'>切换台配置</h4>
-                <p>在切换台软件控制面板的音频面板中，启用来自XLR的声音，调整音量大小。</p>
-                <p>经过以上设置后，舞台干声即可进入直播 Program 中。</p>
+            <p>舞台干声，是指现场调音台输出的各种声音，主要包括：现场各种表演麦克风、表演音乐等。舞台干声是的收录的处理是直播的重要内容之一。如果没有声音，画面拍得再好也是一次失败的直播。直播收声原理如下图所示：</p>
+            <p><img class="diagram mdui-img-fluid" class="diagram" src="image/舞台干声收录.svg" referrerpolicy="no-referrer"
+                    alt="舞台干声收录"></p>
+            <h3 id='接线'>接线</h3>
+            <ol start=''>
+                <li>使用两路<code>6.5mm-6.5mm</code>音频线连接现场调音台输出和电子调音台的输入。HFLive13.0使用的是在墙体内预埋的音频线，连接现场调音台的<code>AUX3/4</code>输出。
+                </li>
+                <li>使用两路<code>卡侬</code>（XLR）线连接电子调音台的<code>Main LR</code>输出和切换台的输入。</li>
+            </ol>
+            <h3 id='配置-3'>配置</h3>
+            <h4 id='电子调音台配置-2'>电子调音台配置</h4>
+            <p>调整电子调音台，使输入的舞台干声能正常输出到<code>Main LR</code>.</p>
+            <h4 id='切换台配置'>切换台配置</h4>
+            <p>在切换台软件控制面板的音频面板中，启用来自XLR的声音，调整音量大小。</p>
+            <p>经过以上设置后，舞台干声即可进入直播 Program 中。</p>
 
             <h2 class="question-title" id='现场声的收录'>现场声的收录<a class="anchor" id="audience-sound"></a></h2>
-                <p>现场声音的收录是直播声音的重要一环，HFLive12.0和13.0在这方面有所欠缺，HFLive14.0+ 务必重视直播的声音！</p>
-                <h3 id='连线-3'>连线</h3>
-                <p class="mdui-center center-text">方案一</p>
-                <p><img class="diagram mdui-img-fluid" class="diagram" src="image/现场声的收录-摄影机.svg"
-                        referrerpolicy="no-referrer" alt="现场声的收录"></p>
-                <p class="mdui-center center-text">方案二</p>
-                <p><img class="diagram mdui-img-fluid" class="diagram" src="image/现场声的收录-子机.svg"
-                        referrerpolicy="no-referrer" alt="现场声的收录"></p>
-                <p>现场声的连线非常简单，只需要将一只（最好是两只）麦克风连接到摄影机或光端机子机上，声音信号就会随视频一起传回切换台。</p>
-                <h3 id='配置-4'>配置</h3>
-                <p>若连接至摄影机，需要在摄影机中设置音频为 XLR 输入，具体参考 <a
-                        href='https://documents.blackmagicdesign.com/UserManuals/BlackmagicURSAMiniManual.pdf#page=1580'>URSA
-                        说明书</a>
-                    第1580页。</p>
-                <p>若连接至子机，子机会自动采用外接的麦克风，具体参考 <a
-                        href='https://documents.blackmagicdesign.com/UserManuals/ATEMConvertersManual.pdf#page=138'>子机说明书</a>
-                    第138页<code>连接音频</code>部分。</p>
-                <p>无论采取哪种连接，都要在切换台中启用该路信号的音频，并调整音量大小，具体参考 <a
-                        href='https://documents.blackmagicdesign.com/UserManuals/ATEM_Production_Studio_Switchers_Manual.pdf#page=1217'>切换台说明书</a>
-                    第1217页。</p>
+            <p>现场声音的收录是直播声音的重要一环，HFLive12.0和13.0在这方面有所欠缺，HFLive14.0+ 务必重视直播的声音！</p>
+            <h3 id='连线-3'>连线</h3>
+            <p class="mdui-center center-text">方案一</p>
+            <p><img class="diagram mdui-img-fluid" class="diagram" src="image/现场声的收录-摄影机.svg"
+                    referrerpolicy="no-referrer" alt="现场声的收录"></p>
+            <p class="mdui-center center-text">方案二</p>
+            <p><img class="diagram mdui-img-fluid" class="diagram" src="image/现场声的收录-子机.svg"
+                    referrerpolicy="no-referrer" alt="现场声的收录"></p>
+            <p>现场声的连线非常简单，只需要将一只（最好是两只）麦克风连接到摄影机或光端机子机上，声音信号就会随视频一起传回切换台。</p>
+            <h3 id='配置-4'>配置</h3>
+            <p>若连接至摄影机，需要在摄影机中设置音频为 XLR 输入，具体参考 <a
+                    href='https://documents.blackmagicdesign.com/UserManuals/BlackmagicURSAMiniManual.pdf#page=1580'>URSA
+                    说明书</a>
+                第1580页。</p>
+            <p>若连接至子机，子机会自动采用外接的麦克风，具体参考 <a
+                    href='https://documents.blackmagicdesign.com/UserManuals/ATEMConvertersManual.pdf#page=138'>子机说明书</a>
+                第138页<code>连接音频</code>部分。</p>
+            <p>无论采取哪种连接，都要在切换台中启用该路信号的音频，并调整音量大小，具体参考 <a
+                    href='https://documents.blackmagicdesign.com/UserManuals/ATEM_Production_Studio_Switchers_Manual.pdf#page=1217'>切换台说明书</a>
+                第1217页。</p>
         </div>
 
         <!-- MDUI JavaScript -->

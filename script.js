@@ -6,7 +6,6 @@ refresh_auto_close_flag();
 function refresh_auto_close_flag() {
     var width = parseInt(window.innerWidth);
     drawer_auto_close_flag = (width < 1024);
-    console.log(drawer_auto_close_flag);
     drawer_init();
 }
 
