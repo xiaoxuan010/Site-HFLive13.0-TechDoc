@@ -97,75 +97,141 @@
 
     <!-- MDUI 主容器-->
     <div class="mdui-container mdui-typo">
+
+        <div class="" id="videographer-group">
+            <h1 class="mdui-text-color-theme group-title" id='拍摄组'>前言</h1>
+            <p>2021年12月30日，随着华附春晚最后一个节目的结束，HFLive13.0完成了我们全部的直播任务。在今年的直播中，我们在继承前辈积累下来的大量经验，不断创新，尝试各种新技术，努力提高直播质量。</p>
+            <p>我们首次尝试SDI In接线技术，实现摄像机参数的统一控制和Tally信号发送至摄像机；我们重新探索校友连线方式，实现近五年来首次连线成功。</p>
+            <p>回首这一年，我们积累了许多经验，也留下了不少遗憾。但是，2021已经过去，时光也不能倒流。华附直播的未来，在你们14.0+的手上！因此，HFLive13.0拍摄组组长郑哲楷、线路组组长阮渝航、技术组组长曹俊侯还有我，将我们今年的一些经验写在了这里。希望你们努力学习，勇敢创新，“成为中学生直播工作中的顶尖团队，没有之一。”（语出HFLive9.0总责刘畅）
+            </p>
+            <p align="right">
+                华附直播团队第十三任总责助理 梁宇轩
+                <br>2022年2月12日于地铁上
+            </p>
+        </div>
+
         <div class="group" id="videographer-group">
             <h1 class="mdui-text-color-theme group-title" id='拍摄组'>拍摄组</h1>
-            <h2 class="question-title">拍摄组问题一<a class="anchor" id="video-question-1"></a></h2>
-            <h2 class="question-title">拍摄组问题二<a class="anchor" id="video-question-2"></a></h2>
+            <h2 class="question-title">前言<a class="anchor" id="videographer-quote-before"></a></h2>
+            <blockquote>
+                <p>本内容是对于原有技术手册、《电视导播教程》的补充，默认读者已拥有相关知识。</p>
+            </blockquote>
+            <h2 class="question-title" id='摄像机参数问题'>摄像机参数问题<a class="anchor" id="video-sdi-in"></a></h2>
+            <h3 id='调参方式sdi-in接入摄像机切换台软件统一调参'>调参方式：SDI in接入摄像机、切换台软件统一调参</h3>
+            <p>在12.0及以前的直播中，摄像机的色温色调由导播根据不同机位画面的效果来通知拍摄进行调校。在13.0的直播中，直播团队首次（应该是吧）采用切换台软件统一调整参数。此方法需要我们将光端机子机的SDI
+                out接到摄像机机身的SDI in上去。与此同时，SDI in还可辅助实现包括但不限于下列效果：</p>
+            <ol start=''>
+                <li>
+                    <p>节目信号传输</p>
+                    接入SDI in后，我们可通过按住摄像机机身上的PGM按钮来实现子机输出视频信号的监看。
+                </li>
+                <li>
+                    <p>输出画面通知（Tally）</p>
+                    接入SDI in后，调出安全框，当导播将该画面切至Program时，摄像机LCD屏幕边缘即会出现红色边框；切至Preview时，屏幕边缘会出现绿色边框。可用于提示拍摄该画面正在/即将输出，注意平稳运镜。注意：该效果需要摄像机编号、光端机子机编号、切换台输入编号一一对应，即切换台2号输入口输入的是连接着2号子机的2号摄像机画面。
+                </li>
+                <li>
+                    <p>参数调校</p>
+                    接入SDI in后，切换台端会放出信号，不断调整摄像机参数，此时，在摄像机机位的拍摄已经没法改动色温色调以及增益，因为一改动就会被切换台端调回去，但仍可以进行光圈的调节。因此，此时的色温色调增益参数需要由切换台端在电脑的切换台软件上进行调整。
+                    统一调节参数需要建立宏命令，将每个机位的参数记录在宏命令中，届时需要同时调节多台摄像机的参数时可以直接通过宏命令统一调节。（警告：录入宏命令时一定要保证其他人不应该动切换台，否则可能会导致启用宏命令时自动切换到某一画面甚至是彩条，死亡回放：2021年华附春晚开头陈主任讲话）
+                </li>
+            </ol>
+            <h3 id='注意事项放送'>注意事项放送</h3>
+            <ol start=''>
+                <li>摄像机编号、子机编号、切换台输入的编号要一一对应</li>
+                <li>一定要提前和灯光组沟通好合适的参数并记录在宏命令中，一定要提前提前再提前将宏命令设置好，尽量提前2小时左右，并检查宏命令运行时是否会附带画面切换。</li>
+                <li>一定要在摄像机被架上机位之前就统一调节好一切设置（最好放在地上摆一排调），调节好后焦，否则会出现两台机参数相同但是画面色彩不统一的情况。</li>
+                <li>抓紧时间熟悉一下软件吧，说不定可以找到一些很不错的功能。</li>
+            </ol>
+
+            <h2 class="question-title" id='摩尔纹'>摩尔纹<a class="anchor" id="moire-pattern"></a></h2>
+            <h3 id='概念'>概念</h3>
+            <p>当两个带有空间频率的图样重叠，通常会产生另一种新图样，这种新图样通常叫做摩尔波纹(如图所示)。由于摄像机的CCD(图像传感器)靶面(感光面)类似于图中间的图形，而LED显示屏是由排列一致的点阵式发光管组成的，整个显示屏不发光面积大，形成了网格状的图样，类似图左边的图像，两者重叠，就形成了类似于图右边的摩尔纹。
+            </p>
+            <p><img class="mdui-img-fluid" src="/image/摩尔纹产生机理.jpg" referrerpolicy="no-referrer" alt="img"></p>
+            <p>摩尔纹的出现是我们在春晚画面问题中较大的一个。</p>
+            <h3 id='消除措施'>消除措施</h3>
+            <ol start=''>
+                <li>在传感器前使用抗混叠滤镜（也称为低通滤镜），然而这种滤镜会降低镜头的分辨率。因此，采取这种措施时必须要在摩尔纹以及分辨率之间做出取舍与妥协，不同型号相机的问题严重性不一，选择也不一样。</li>
+                <li>相机角度。由于相机与物体的角度会导致摩尔波纹，稍微改变相机的角度（通过旋转相机）可以消除或改变存在的任何摩尔波纹。</li>
+                <li>在LED显示屏表面叠加一层光学处理幕，该幕由特定比例的特殊吸光材料与表面微珠透镜涂层组成，通过光学处理幕对离散的LED发光点进行放大显示，改善LED显示屏的表面物理结构，使得LED显示屏由点发光转换成面发光，最终在光学处理幕表面形成连续的高清晰图像，消除摩尔纹。</li>
+                <li>很显然，前面三种办法都不太适合我们，所以，写前面三种方法是为了让你们重视最后一种。调整焦点，使得表演者位置合焦而背景led屏幕失焦。该方法需要跟拍摄不断强调不断强调</li>
+            </ol>
         </div>
-        <hr />
 
         <div class="group" id="connection-group">
             <h1 class="mdui-text-color-theme group-title" id='线路组'>线路组</h1>
             <h2 id='前言' class="question-title">前言<a class="anchor" id="connect-quote-before"></a></h2>
-                <blockquote>
-                    <p>本部分内容系原有线路组技术手册/线路组课程的补充，默认读者已具有相关基础知识。</p>
-                </blockquote>
+            <blockquote>
+                <p>本部分内容系原有线路组技术手册/线路组课程的补充，默认读者已具有相关基础知识。</p>
+            </blockquote>
 
             <h2 id='电源' class="question-title">电源<a class="anchor" id="power"></a></h2>
-                <p>13.0购置了大量电线，电源线的铺设一般沿着光纤的线槽而不用额外加槽。注意不同长短电源线的配合使用。</p>
-                <p>另外，由于直播间内的电源在本届被告知存在漏电现象，会导致跳闸、与音控室的用电设备冲突，因此采用直播间门口的应急灯的应急电源，望周知。</p>
-            
+            <p>13.0购置了大量电线，电源线的铺设一般沿着光纤的线槽而不用额外加槽。注意不同长短电源线的配合使用。</p>
+            <p>另外，由于直播间内的电源在本届被告知存在漏电现象，会导致跳闸、与音控室的用电设备冲突，因此采用直播间门口的应急灯的应急电源，望周知。</p>
+
             <h2 id='网线' class="question-title">网线<a class="anchor" id="net-line"></a></h2>
-                <p>网线有连接器，但是建议尽量减少转接次数减少带宽损耗。</p>
-            
+            <p>网线有连接器，但是建议尽量减少转接次数减少带宽损耗。</p>
+
             <h2 id='摄像机设置' class="question-title">摄像机设置<a class="anchor" id="connect-camera-setting"></a></h2>
-                <p>摄像机在Blackmagic的官网有说明书，里面有详细功能的介绍。</p>
-                <p>需要特别注意设置的有：</p>
-                <ol>
-                    <li>摄影机编号、子机编号、切换台编号有没有对应</li>
-                    <li>输出接口是哪个</li>
-                    <li>输出SDI的level，关于level的设置问题后面会讲</li>
-                    <li>输出画质和频率</li>
-                </ol>
+            <p>摄像机在Blackmagic的官网有说明书，里面有详细功能的介绍。</p>
+            <p>需要特别注意设置的有：</p>
+            <ol>
+                <li>摄影机编号、子机编号、切换台编号有没有对应</li>
+                <li>输出接口是哪个</li>
+                <li>输出SDI的level，关于level的设置问题后面会讲</li>
+                <li>输出画质和频率</li>
+            </ol>
             <h2 id='sdi的Level问题' class="question-title">SDI的Level问题<a class="anchor" id="connect-levelab"></a></h2>
-                <p>当使用 SDI 的较高画质时（一般包括 1080p50/1080p59.94/1080p60 ），其信号又分为 Level A和 Level B
-                    两种类型，<strong>互不兼容</strong>。以下表格列出了我们的一些设备可以接受的类型：</p>
-                <figure><table class="mdui-table">
-                    <thead><tr>
-                        <th>设备</th>
-                        <th>输入 Level</th>
-                        <th>备注</th>
-                    </tr></thead>
-                    <tbody><tr>
-                        <td>威固无线图传</td>
-                        <td>A、B</td>
-                        <td>不确定，是否支持 B 还需测试</td>
-                    </tr><tr>
-                        <td>小玛 400S Pro 无线图传</td>
-                        <td>A、B</td>
-                        <td>&nbsp;</td>
-                    </tr><tr>
-                        <td>BMD光端机子机 (Blackmagic Camera Converter)</td>
-                        <td>B</td>
-                        <td>&nbsp;</td>
-                    </tr><tr>
-                        <td>BMD切换台 (ATEM Production Studio 4K)</td>
-                        <td>B</td>
-                        <td>&nbsp;</td>
-                    </tr><tr>
-                        <td>租赁的图传</td>
-                        <td>A、B</td>
-                        <td>不确定，需要测试</td>
+            <p>当使用 SDI 的较高画质时（一般包括 1080p50/1080p59.94/1080p60 ），其信号又分为 Level A和 Level B
+                两种类型，<strong>互不兼容</strong>。以下表格列出了我们的一些设备可以接受的类型：</p>
+            <figure>
+                <table class="mdui-table">
+                    <thead>
+                        <tr>
+                            <th>设备</th>
+                            <th>输入 Level</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>威固无线图传</td>
+                            <td>A、B</td>
+                            <td>不确定，是否支持 B 还需测试</td>
+                        </tr>
+                        <tr>
+                            <td>小玛 400S Pro 无线图传</td>
+                            <td>A、B</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>BMD光端机子机 (Blackmagic Camera Converter)</td>
+                            <td>B</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>BMD切换台 (ATEM Production Studio 4K)</td>
+                            <td>B</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>租赁的图传</td>
+                            <td>A、B</td>
+                            <td>不确定，需要测试</td>
                         </tr>
                     </tbody>
-                </table></figure>
-                <p>以下表格列出了我们的一些设备可以输出的类型：</p>
-                <figure><table class="mdui-table">
-                    <thead><tr>
-                        <th>设备</th>
-                        <th>输出 Level</th>
-                        <th>备注</th>
-                    </tr></thead>
+                </table>
+            </figure>
+            <p>以下表格列出了我们的一些设备可以输出的类型：</p>
+            <figure>
+                <table class="mdui-table">
+                    <thead>
+                        <tr>
+                            <th>设备</th>
+                            <th>输出 Level</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr>
                             <td>电视台DV机 (AG-DVX200MC)</td>
@@ -193,12 +259,13 @@
                             <td>&nbsp;</td>
                         </tr>
                     </tbody>
-                </table></figure>
-                <p>从上面两个表格不难发现，BMD 公司普遍采用 Level-B 标准，而其他厂商大多采用 Level-A 标准，因此 BMD 的设备和其他设备连接可能会出现困难。例如，电视台DV机无法通过 SDI 向子机发送
-                    1080p50 信号；无线图传接收端无法通过 SDI 将信号送进切换台。</p>
-                <p>注意，Level-A/B 的区分<strong>仅限于</strong>使用 SDI 传输 1080p50 以上（2160P未经过测试）的信号。也就是说，使用 HDMI
-                    传输<strong>或者</strong>使用 1080p50 以下的画质（如 1080i50 ）<strong>不受</strong> Level-A/B 的影响。</p>
-                <p>因此，当遇到 Level-A/B 不相同时，可以采取换用 HDMI 连接或降低画质的方法解决，需要在直播实践中特别留意。</p>
+                </table>
+            </figure>
+            <p>从上面两个表格不难发现，BMD 公司普遍采用 Level-B 标准，而其他厂商大多采用 Level-A 标准，因此 BMD 的设备和其他设备连接可能会出现困难。例如，电视台DV机无法通过 SDI 向子机发送
+                1080p50 信号；无线图传接收端无法通过 SDI 将信号送进切换台。</p>
+            <p>注意，Level-A/B 的区分<strong>仅限于</strong>使用 SDI 传输 1080p50 以上（2160P未经过测试）的信号。也就是说，使用 HDMI
+                传输<strong>或者</strong>使用 1080p50 以下的画质（如 1080i50 ）<strong>不受</strong> Level-A/B 的影响。</p>
+            <p>因此，当遇到 Level-A/B 不相同时，可以采取换用 HDMI 连接或降低画质的方法解决，需要在直播实践中特别留意。</p>
         </div>
         <hr />
 
